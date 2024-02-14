@@ -2,12 +2,14 @@ from aiogram.filters.command import Command
 from aiogram import types
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+async def maps_library(message: types.Message):
+    await message.answer("https://mospolynavigation.github.io/dod/")
 
-async def map_lib(message: types.Message):
+async def new_route(message: types.Message):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
         text="Официальная часть",
-        callback_data="get_of_part")
+        callback_data="of_part")
     )
     await message.answer(
         "Нажмите на кнопку, если ваше имя - София",
