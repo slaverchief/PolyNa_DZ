@@ -10,12 +10,12 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=env.TOKEN)
 dp = Dispatcher()
 regdp = dp.message.register
-
+regcb = dp.callback_query.register
 
 regdp(h.start, Command('start'))
 
 async def main():
-    await dp.start_polling(bot, image_ids=[])
+    await dp.start_polling(bot, image_ids={})
 
 
 if __name__ == "__main__":
